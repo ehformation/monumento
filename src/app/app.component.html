@@ -9,7 +9,7 @@
         <p *ngIf="monumentSelected">Vous avez sélectionné le monument {{ monumentSelected.name }}</p>
         <p *ngIf="!monumentSelected">Aucun monument n'a été trouvé</p>
         <div *ngFor="let monument of monumentList" class="col m4 s6">
-            <div class="card horizontal" appBorderCard>
+            <div class="card horizontal" appBorderCard="#000">
                 <div class="card-image">
                     <img [src]="monument.picture" />
                 </div>
