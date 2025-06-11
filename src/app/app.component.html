@@ -1,12 +1,24 @@
 <h1>Liste des monuments</h1>
-
-<p (click)="selectMonument(monumentList[0])">{{monumentList[0].name}}</p>
-<p>{{monumentList[1].name}}</p>
-<p>{{monumentList[2].name}}</p>
-<p>{{monumentList[3].name}}</p>
-<p>{{monumentList[4].name}}</p>
-<p>{{monumentList[5].name}}</p>
-<p>{{monumentList[6].name}}</p>
-<p>{{monumentList[7].name}}</p>
-<p>{{monumentList[8].name}}</p>
-<p>{{monumentList[9].name}}</p>
+<div class="container">
+    <input 
+        #input
+        type="number"
+        (keyup.enter)="selectMonument(input.value)" 
+    >
+    <div class="row">
+        <p *ngIf="monumentSelected">Vous avez sélectionné le monument {{ monumentSelected.name }}</p>
+        <p *ngIf="!monumentSelected">Aucun monument n'a été trouvé</p>
+        <div *ngFor="let monument of monumentList" class="col m4 s6">
+            <div class="card horizontal" >
+                <div class="card-image">
+                    <img [src]="monument.picture" />
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ monument.name }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

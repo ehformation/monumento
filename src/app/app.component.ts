@@ -9,13 +9,18 @@ import { Monument } from './monument.model';
 })
 export class AppComponent implements OnInit {
   monumentList: Monument[] = MONUMENTS
+  monumentSelected: Monument|undefined
 
   ngOnInit(): void {
     console.table(this.monumentList);
-    this.selectMonument(this.monumentList[1]);
   }
 
-  selectMonument(monument: Monument) {
-    console.log(`Vous avez cliqué sur le monument ${monument.name}`);
+  selectMonument(monumentId: string) {
+
+    const searchMonument: Monument|undefined = this.monumentList.find( monument => monument.id == +monumentId)
+    if(searchMonument) {
+      this.monumentSelected = searchMonument
+    }
+    console.log(`Le monument n'existe pas`);
   }
 }
