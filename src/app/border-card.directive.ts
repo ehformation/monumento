@@ -14,6 +14,10 @@ export class BorderCardDirective {
     this.setBorder("#009688");
   }
 
+  @HostListener('mouseleave') onMouseLeave() {
+    this.setBorder("#F5F5F5");
+  }
+
   setHeight(height: number) {
     this.el.nativeElement.style.height = `${height}px`;
   }
