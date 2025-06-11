@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MONUMENTS } from '../mock-monument-list';
 import { Monument } from '../monument.model';
 
@@ -13,7 +13,7 @@ export class DetailMonumentComponent implements OnInit {
   monumentList: Monument[] = MONUMENTS
   monument: Monument|undefined
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -23,5 +23,9 @@ export class DetailMonumentComponent implements OnInit {
     }
 
     console.log(monumentId);
+  }
+
+  goToMonumentList(){
+    this.router.navigate(['/monuments']);
   }
 }

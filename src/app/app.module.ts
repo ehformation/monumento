@@ -7,6 +7,7 @@ import { BorderCardDirective } from './border-card.directive';
 import { CountryByColorPipe } from './country-by-color.pipe';
 import { ListMonumentComponent } from './list-monument/list-monument.component';
 import { DetailMonumentComponent } from './detail-monument/detail-monument.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { DetailMonumentComponent } from './detail-monument/detail-monument.compo
     BorderCardDirective,
     CountryByColorPipe,
     ListMonumentComponent,
-    DetailMonumentComponent
+    DetailMonumentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

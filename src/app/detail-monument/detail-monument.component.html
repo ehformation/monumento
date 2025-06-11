@@ -39,9 +39,12 @@
           </table>
         </div>
         <div class="card-action">
-          
+          <a (click)="goToMonumentList()">Retour</a>
         </div>
       </div>
     </div>
     </div>
+</div>
+<div *ngIf='!monument' class="center">
+  <h2>Aucun monument !</h2>
 </div>
