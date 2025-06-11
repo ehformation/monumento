@@ -7,7 +7,8 @@ export const MONUMENTS: Monument[] = [
     country: 'France',
     city: 'Paris',
     buildYear: 1889,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/tour-eiffel.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/tour-eiffel.png?raw=true",
+    created: new Date()
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const MONUMENTS: Monument[] = [
     country: 'États-Unis',
     city: 'New York',
     buildYear: 1886,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/statue-liberte.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/statue-liberte.png?raw=true",
+    created: new Date()
   },
   {
     id: 3,
@@ -23,7 +25,8 @@ export const MONUMENTS: Monument[] = [
     country: 'Italie',
     city: 'Rome',
     buildYear: 80,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/colisee.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/colisee.png?raw=true",
+    created: new Date()
   },
   {
     id: 4,
@@ -31,7 +34,8 @@ export const MONUMENTS: Monument[] = [
     country: 'Royaume-Uni',
     city: 'Londres',
     buildYear: 1859,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/bigben.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/bigben.png?raw=true",
+    created: new Date()
   },
   {
     id: 5,
@@ -39,7 +43,8 @@ export const MONUMENTS: Monument[] = [
     country: 'Inde',
     city: 'Agra',
     buildYear: 1632,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/tajmahal.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/tajmahal.png?raw=true",
+    created: new Date()
   },
   {
     id: 6,
@@ -47,7 +52,8 @@ export const MONUMENTS: Monument[] = [
     country: 'Brésil',
     city: 'Rio de Janeiro',
     buildYear: 1931,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/corcovado.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/corcovado.png?raw=true",
+    created: new Date()
   },
   {
     id: 7,
@@ -55,7 +61,8 @@ export const MONUMENTS: Monument[] = [
     country: 'Égypte',
     city: 'Gizeh',
     buildYear: -2560,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/kehops.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/kehops.png?raw=true",
+    created: new Date()
   },
   {
     id: 8,
@@ -63,7 +70,8 @@ export const MONUMENTS: Monument[] = [
     country: 'France',
     city: 'Versailles',
     buildYear: 1682,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/versaille.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/versaille.png?raw=true",
+    created: new Date()
   },
   {
     id: 9,
@@ -71,7 +79,8 @@ export const MONUMENTS: Monument[] = [
     country: 'Pérou',
     city: 'Cusco',
     buildYear: 1450,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/machupiccu.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/machupiccu.png?raw=true",
+    created: new Date()
   },
   {
     id: 10,
@@ -79,6 +88,7 @@ export const MONUMENTS: Monument[] = [
     country: 'Grèce',
     city: 'Athènes',
     buildYear: -447,
-    picture: "https://github.com/ehformation/monumento/blob/main/images/pantheon.png?raw=true"
+    picture: "https://github.com/ehformation/monumento/blob/main/images/pantheon.png?raw=true",
+    created: new Date()
   }
 ];
