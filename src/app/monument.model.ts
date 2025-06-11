@@ -3,5 +3,6 @@ export interface Monument {
     name: string,
     country: string,
     city: string,
-    buildYear?: number
+    buildYear?: number,
+    picture: string
 }

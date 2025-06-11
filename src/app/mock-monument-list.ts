@@ -6,69 +6,79 @@ export const MONUMENTS: Monument[] = [
     name: 'Tour Eiffel',
     country: 'France',
     city: 'Paris',
-    buildYear: 1889
+    buildYear: 1889,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/tour-eiffel.png?raw=true"
   },
   {
     id: 2,
     name: 'Statue de la Liberté',
     country: 'États-Unis',
     city: 'New York',
-    buildYear: 1886
+    buildYear: 1886,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/statue-liberte.png?raw=true"
   },
   {
     id: 3,
     name: 'Colisée',
     country: 'Italie',
     city: 'Rome',
-    buildYear: 80
+    buildYear: 80,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/colisee.png?raw=true"
   },
   {
     id: 4,
     name: 'Big Ben',
     country: 'Royaume-Uni',
     city: 'Londres',
-    buildYear: 1859
+    buildYear: 1859,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/bigben.png?raw=true"
   },
   {
     id: 5,
     name: 'Taj Mahal',
     country: 'Inde',
     city: 'Agra',
-    buildYear: 1632
+    buildYear: 1632,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/tajmahal.png?raw=true"
   },
   {
     id: 6,
     name: 'Christ Rédempteur',
     country: 'Brésil',
     city: 'Rio de Janeiro',
-    buildYear: 1931
+    buildYear: 1931,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/corcovado.png?raw=true"
   },
   {
     id: 7,
     name: 'Pyramide de Khéops',
     country: 'Égypte',
     city: 'Gizeh',
-    buildYear: -2560
+    buildYear: -2560,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/kehops.png?raw=true"
   },
   {
     id: 8,
     name: 'Palais de Versailles',
     country: 'France',
     city: 'Versailles',
-    buildYear: 1682
+    buildYear: 1682,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/versaille.png?raw=true"
   },
   {
     id: 9,
     name: 'Machu Picchu',
     country: 'Pérou',
     city: 'Cusco',
-    buildYear: 1450
+    buildYear: 1450,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/machupiccu.png?raw=true"
   },
   {
     id: 10,
     name: 'Parthénon',
     country: 'Grèce',
     city: 'Athènes',
-    buildYear: -447
+    buildYear: -447,
+    picture: "https://github.com/ehformation/monumento/blob/main/images/pantheon.png?raw=true"
   }
 ];
