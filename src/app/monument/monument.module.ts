@@ -5,6 +5,7 @@ import { CountryByColorPipe } from './country-by-color.pipe';
 import { ListMonumentComponent } from './list-monument/list-monument.component';
 import { DetailMonumentComponent } from './detail-monument/detail-monument.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MonumentFormComponent } from './monument-form/monument-form.component';
 
 const monumentRoutes: Routes = [
   { path: 'monument/:id', component: DetailMonumentComponent },
@@ -17,11 +18,12 @@ const monumentRoutes: Routes = [
     CountryByColorPipe,
     ListMonumentComponent,
     DetailMonumentComponent,
+    MonumentFormComponent,
   ],
   imports: [
     CommonModule,
     RouterModule.forRoot(monumentRoutes)
-    
+
   ]
 })
 export class MonumentModule { }

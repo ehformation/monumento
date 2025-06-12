@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { MONUMENTS } from '../mock-monument-list';
 import { Monument } from '../monument.model';
 import { Router } from '@angular/router';
+import { MonumentService } from '../monument.service';
 
 @Component({
   selector: 'app-list-monument',
@@ -10,13 +10,13 @@ import { Router } from '@angular/router';
   ]
 })
 export class ListMonumentComponent {
-  monumentList: Monument[] = MONUMENTS
+  monumentList: Monument[] = []
   monumentSelected: Monument|undefined
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private monumentService: MonumentService) {}
 
   ngOnInit(): void {
-    console.table(this.monumentList);
+    this.monumentList = this.monumentService.getAllMonuments()
   }
 
   selectMonument(monumentId: string) {

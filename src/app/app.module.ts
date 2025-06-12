@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MonumentModule } from './monument/monument.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { MonumentModule } from './monument/monument.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     MonumentModule,
     AppRoutingModule
   ],
