@@ -6,9 +6,11 @@ import { ListMonumentComponent } from './list-monument/list-monument.component';
 import { DetailMonumentComponent } from './detail-monument/detail-monument.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MonumentFormComponent } from './monument-form/monument-form.component';
+import { FormsModule } from '@angular/forms';
 
 const monumentRoutes: Routes = [
   { path: 'monument/:id', component: DetailMonumentComponent },
+  { path: 'monument-form', component: MonumentFormComponent },
   { path: 'monuments', component: ListMonumentComponent },
 ]
 
@@ -22,6 +24,7 @@ const monumentRoutes: Routes = [
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forRoot(monumentRoutes)
 
   ]
