@@ -29,4 +29,8 @@ export class DetailMonumentComponent implements OnInit {
   goToMonumentList(){
     this.router.navigate(['/monuments']);
   }
+
+  goToMonumentEdit(){
+    this.router.navigate(['edit/monument', this.monument?.id]);
+  }
 }

@@ -19,7 +19,6 @@ export class MonumentFormComponent implements OnInit {
   ngOnInit(): void {
     this.countries = this.monumentService.getAllCountry();
     this.isAddForm = this.router.url.includes("add")
-    console.log(this.monument);
   }
   onSubmit(){
     this.router.navigate(['/monument', this.monument?.id ])

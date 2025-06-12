@@ -8,7 +8,6 @@
             <label for="name">Nom</label>
             <input type="text" class="form-control" id="name"
                    required
-                   pattern="^[a-zA-Z0-9àéèç\\s]{1,25}$"
                    [(ngModel)]="monument.name" name="name"
                    #name="ngModel">
             <div [hidden]="name.valid || name.pristine"
@@ -35,7 +34,6 @@
             <label for="city">Ville</label>
             <input type="text" class="form-control" id="city"
                    required
-                   pattern="^[a-zA-Z0-9àéèç\\s]{1,25}$"
                    [(ngModel)]="monument.city" name="city"
                    #city="ngModel">
             <div [hidden]="city.valid || city.pristine"
@@ -75,7 +73,7 @@
           <div class="form-group">
             <label for="description">Description</label>
             <textarea class="form-control" id="description"
-                      rows="4"
+                      rows="7"
                       required
                       [(ngModel)]="monument.description" name="description"
                       #description="ngModel"></textarea>
