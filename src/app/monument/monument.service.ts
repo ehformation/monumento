@@ -1,20 +1,56 @@
 import { Injectable } from '@angular/core';
-import { MONUMENTS } from './mock-monument-list';
 import { Monument } from './monument.model';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, Observable, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MonumentService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getAllMonuments(): Monument[] {
-    return MONUMENTS;
+  getAllMonuments(): Observable<Monument[]> {
+    
+    return this.http.get<Monument[]>('api/monuments').pipe(
+
+      tap((response : Monument[] ) => console.log(response)),
+
+      catchError ( (error) => {
+        console.log(error)
+        return of([])
+      })
+
+    )
   }
 
-  getMonumentById(monumentId: number): Monument|undefined {
-    return MONUMENTS.find( monument => monument.id == +monumentId);
+  getMonumentById(monumentId: number): Observable<Monument|undefined> {
+    return this.http.get<Monument>(`api/monuments/${monumentId}`).pipe(
+
+      tap((response : Monument ) => console.log(response)),
+      
+      catchError ( (error) => {
+        console.log(error)
+        return of(undefined)
+      })
+
+    )
+  }
+
+  editMonument(monument: Monument): Observable<null> {
+
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type' : 'application/json'  })
+    };
+
+    return this.http.put<null>('api/monuments', monument, httpOptions).pipe(
+      tap((response) => console.log(response)),
+      catchError ( (error) => {
+        console.log(error)
+        return of(null)
+      })
+    )
+
   }
 
   getAllCountry() {

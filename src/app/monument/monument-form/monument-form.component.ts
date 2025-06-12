@@ -21,6 +21,11 @@ export class MonumentFormComponent implements OnInit {
     this.isAddForm = this.router.url.includes("add")
   }
   onSubmit(){
-    this.router.navigate(['/monument', this.monument?.id ])
+    if(!this.isAddForm && this.monument){
+      this.monumentService.editMonument(this.monument).subscribe(
+        () => this.router.navigate(['/monument', this.monument?.id ])
+      )
+    }
+    
   }
 }

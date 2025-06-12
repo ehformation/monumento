@@ -23,7 +23,7 @@ export class EditMonumentComponent implements OnInit {
   ngOnInit(): void {
     const monumentId: string|null = this.route.snapshot.paramMap.get('id')
     if(monumentId){
-      this.monument = this.monumentService.getMonumentById(+monumentId)
+      this.monumentService.getMonumentById(+monumentId).subscribe( monument => this.monument = monument)
     }
   }
 }

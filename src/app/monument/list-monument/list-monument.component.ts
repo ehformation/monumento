@@ -16,7 +16,7 @@ export class ListMonumentComponent {
   constructor(private router: Router, private monumentService: MonumentService) {}
 
   ngOnInit(): void {
-    this.monumentList = this.monumentService.getAllMonuments()
+    this.monumentService.getAllMonuments().subscribe( monumentList => this.monumentList = monumentList)
   }
 
   selectMonument(monumentId: string) {
