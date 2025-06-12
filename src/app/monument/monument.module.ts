@@ -1,12 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BorderCardDirective } from './border-card.directive';
+import { CountryByColorPipe } from './country-by-color.pipe';
+import { ListMonumentComponent } from './list-monument/list-monument.component';
+import { DetailMonumentComponent } from './detail-monument/detail-monument.component';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const monumentRoutes: Routes = [
+  { path: 'monument/:id', component: DetailMonumentComponent },
+  { path: 'monuments', component: ListMonumentComponent },
+]
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BorderCardDirective,
+    CountryByColorPipe,
+    ListMonumentComponent,
+    DetailMonumentComponent,
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot(monumentRoutes)
+    
   ]
 })
 export class MonumentModule { }
