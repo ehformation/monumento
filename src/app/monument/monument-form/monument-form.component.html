@@ -49,19 +49,14 @@
             <label for="country">Pays</label>
             <select class="form-control" id="country"
                     required
-                    [(ngModel)]="monument.country" name="country"
+                    [(ngModel)]="monument.country"
+                    name="country"
                     #country="ngModel">
-              <option value="" disabled selected>Choisir un pays</option>
-              <option value="France">France</option>
-              <option value="États-Unis">États-Unis</option>
-              <option value="Italie">Italie</option>
-              <option value="Royaume-Uni">Royaume-Uni</option>
-              <option value="Inde">Inde</option>
-              <option value="Brésil">Brésil</option>
-              <option value="Égypte">Égypte</option>
-              <option value="Pérou">Pérou</option>
-              <option value="Grèce">Grèce</option>
+          
+              <option *ngIf="isAddForm" value="" disabled selected>Choisir un pays</option>
+              <option *ngFor="let p of countries" [value]="p">{{ p }}</option>
             </select>
+          
             <div [hidden]="country.valid || country.pristine"
                  class="card-panel red accent-1">
               Le pays du monument est requis.

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Monument } from '../monument.model';
+import { MonumentService } from '../monument.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-monument-form',
@@ -8,24 +10,18 @@ import { Monument } from '../monument.model';
   ]
 })
 export class MonumentFormComponent implements OnInit {
-  monument: Monument = {
-    id: 1,
-    name: 'YOYO',
-    country: '',
-    city: '',
-    buildYear: 1,
-    picture: "",
-    description: "",
-    created: new Date()
-  }
-  isAddForm = true
-
-  constructor () {}
+  @Input() monument: Monument|undefined
+  countries: string[] = []
+  isAddForm: boolean = false
+  
+  constructor (private monumentService: MonumentService, private router: Router) {}
 
   ngOnInit(): void {
-    console.log(this.monument?.name)
+    this.countries = this.monumentService.getAllCountry();
+    this.isAddForm = this.router.url.includes("add")
+    console.log(this.monument);
   }
   onSubmit(){
-
+    this.router.navigate(['/monument', this.monument?.id ])
   }
 }

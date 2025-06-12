@@ -16,4 +16,18 @@ export class MonumentService {
   getMonumentById(monumentId: number): Monument|undefined {
     return MONUMENTS.find( monument => monument.id == +monumentId);
   }
+
+  getAllCountry() {
+    return [
+      'France',
+      'États-Unis',
+      'Italie',
+      'Royaume-Uni',
+      'Inde',
+      'Brésil',
+      'Égypte',
+      'Pérou',
+      'Grèce'
+    ]
+  }
 }
