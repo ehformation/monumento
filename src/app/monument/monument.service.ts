@@ -53,6 +53,16 @@ export class MonumentService {
 
   }
 
+  searchMonumentList(term: string): Observable<Monument[]> {
+    return this.http.get<Monument[]>(`api/monuments?name=${term}`).pipe(
+      tap((response : Monument[] ) => console.log(response)),
+      catchError ( (error) => {
+        console.log(error)
+        return of([])
+      })
+    )
+  }
+
   getAllCountry() {
     return [
       'France',
