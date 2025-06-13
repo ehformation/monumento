@@ -9,12 +9,13 @@ import { MonumentFormComponent } from './monument-form/monument-form.component';
 import { FormsModule } from '@angular/forms';
 import { EditMonumentComponent } from './edit-monument/edit-monument.component';
 import { SearchMonumentComponent } from './search-monument/search-monument.component';
+import { authGuard } from '../auth.guard';
 
 const monumentRoutes: Routes = [
-  { path: 'edit/monument/:id', component: EditMonumentComponent },
-  { path: 'monument/:id', component: DetailMonumentComponent },
-  { path: 'monument-form', component: MonumentFormComponent },
-  { path: 'monuments', component: ListMonumentComponent },
+  { path: 'edit/monument/:id', component: EditMonumentComponent, canActivate: [authGuard] },
+  { path: 'monument/:id', component: DetailMonumentComponent, canActivate: [authGuard] },
+  { path: 'monument-form', component: MonumentFormComponent, canActivate: [authGuard] },
+  { path: 'monuments', component: ListMonumentComponent, canActivate: [authGuard] },
 ]
 
 @NgModule({
