@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Monument } from '../monument.model';
+import { Monument, MonumentData } from '../monument.model';
 import { ActivatedRoute } from '@angular/router';
 import { MonumentService } from '../monument.service';
 
@@ -8,7 +8,7 @@ import { MonumentService } from '../monument.service';
   template: `
     <h2>Editer {{ monument?.name }}</h2>
     <p *ngIf="monument" class="center">
-      <img [src]="monument.data.picture">
+      <img [src]="monument.picture">
     </p>
     <app-monument-form *ngIf="monument" [monument]="monument"></app-monument-form>
   `,
@@ -16,7 +16,7 @@ import { MonumentService } from '../monument.service';
   ]
 })
 export class EditMonumentComponent implements OnInit {
-  monument: Monument|undefined
+  monument: MonumentData|undefined
 
   constructor(private route: ActivatedRoute, private monumentService: MonumentService) {}
   

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Monument } from '../monument.model';
+import { Monument, MonumentData } from '../monument.model';
 import { Router } from '@angular/router';
 import { MonumentService } from '../monument.service';
 
@@ -10,8 +10,8 @@ import { MonumentService } from '../monument.service';
   ]
 })
 export class ListMonumentComponent {
-  monumentList: Monument[] = []
-  monumentSelected: Monument|undefined
+  monumentList: MonumentData[] = []
+  monumentSelected: MonumentData|undefined
 
   constructor(private router: Router, private monumentService: MonumentService) {}
 
@@ -21,14 +21,14 @@ export class ListMonumentComponent {
 
   selectMonument(monumentId: string) {
 
-    const searchMonument: Monument|undefined = this.monumentList.find( monument => monument.id == +monumentId)
+    const searchMonument: MonumentData|undefined = this.monumentList.find( monument => monument.id == +monumentId)
     if(searchMonument) {
       this.monumentSelected = searchMonument
     }
     console.log(`Le monument n'existe pas`);
   }
 
-  goToMonument(monument: Monument) {
+  goToMonument(monument: MonumentData) {
     this.router.navigate(['/monument', monument.id])
   }
 }

@@ -8,7 +8,7 @@
             <label for="name">Nom</label>
             <input type="text" class="form-control" id="name"
                    required
-                   [(ngModel)]="monument.data.name" name="name"
+                   [(ngModel)]="monument.name" name="name"
                    #name="ngModel">
             <div [hidden]="name.valid || name.pristine"
                  class="card-panel red accent-1">
@@ -21,7 +21,7 @@
             <label for="picture">Image</label>
             <input type="url" class="form-control" id="picture"
                    required
-                   [(ngModel)]="monument.data.picture" name="picture"
+                   [(ngModel)]="monument.picture" name="picture"
                    #picture="ngModel">
             <div [hidden]="picture.valid || picture.pristine"
                  class="card-panel red accent-1">
@@ -34,7 +34,7 @@
             <label for="city">Ville</label>
             <input type="text" class="form-control" id="city"
                    required
-                   [(ngModel)]="monument.data.city" name="city"
+                   [(ngModel)]="monument.city" name="city"
                    #city="ngModel">
             <div [hidden]="city.valid || city.pristine"
                  class="card-panel red accent-1">
@@ -47,7 +47,7 @@
             <label for="country">Pays</label>
             <select class="form-control" id="country"
                     required
-                    [(ngModel)]="monument.data.country"
+                    [(ngModel)]="monument.country"
                     name="country"
                     #country="ngModel">
           
@@ -65,7 +65,7 @@
           <div class="form-group">
             <label for="buildYear">Année de construction</label>
             <input type="number" class="form-control" id="buildYear"
-                   [(ngModel)]="monument.data.buildYear" name="buildYear"
+                   [(ngModel)]="monument.buildYear" name="buildYear"
                    #buildYear="ngModel">
           </div>
   
@@ -75,7 +75,7 @@
             <textarea class="form-control" id="description"
                       rows="7"
                       required
-                      [(ngModel)]="monument.data.description" name="description"
+                      [(ngModel)]="monument.description" name="description"
                       #description="ngModel"></textarea>
             <div [hidden]="description.valid || description.pristine"
                  class="card-panel red accent-1">

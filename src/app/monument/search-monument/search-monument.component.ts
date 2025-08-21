@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { debounceTime, distinctUntilChanged, Observable, of, Subject, switchMap } from 'rxjs';
-import { Monument } from '../monument.model';
+import { Monument, MonumentData } from '../monument.model';
 import { Router } from '@angular/router';
 import { MonumentService } from '../monument.service';
 
@@ -12,7 +12,7 @@ import { MonumentService } from '../monument.service';
 })
 export class SearchMonumentComponent implements OnInit {
   searchTerms = new Subject<string>()
-  monuments$: Observable<Monument[]> = of([])
+  monuments$: Observable<MonumentData[]> = of([])
 
   constructor(private router: Router, private monumentService: MonumentService) {}
 
@@ -31,7 +31,7 @@ export class SearchMonumentComponent implements OnInit {
     this.searchTerms.next(term)
   }
  
-  goToDetail(monument: Monument) {
+  goToDetail(monument: MonumentData) {
     const link = ["/monument", monument.id]
     this.router.navigate(link)
   }

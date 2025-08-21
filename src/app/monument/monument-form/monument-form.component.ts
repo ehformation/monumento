@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Monument } from '../monument.model';
+import { Monument, MonumentData } from '../monument.model';
 import { MonumentService } from '../monument.service';
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   ]
 })
 export class MonumentFormComponent implements OnInit {
-  @Input() monument: Monument|undefined
+  @Input() monument: MonumentData|undefined
   countries: string[] = []
   isAddForm: boolean = false
   

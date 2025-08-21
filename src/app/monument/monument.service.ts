@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Monument } from './monument.model';
+import { Monument, MonumentData } from './monument.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, of, tap } from 'rxjs';
 
@@ -10,11 +10,11 @@ export class MonumentService {
 
   constructor(private http: HttpClient) { }
 
-  getAllMonuments(): Observable<Monument[]> {
+  getAllMonuments(): Observable<MonumentData[]> {
     
-    return this.http.get<Monument[]>('http://localhost:3000/api/monuments').pipe(
+    return this.http.get<MonumentData[]>('http://localhost:3000/api/monuments').pipe(
 
-      tap((response : Monument[] ) => console.log(response)),
+      tap((response : MonumentData[] ) => console.log(response)),
 
       catchError ( (error) => {
         console.log(error)
@@ -24,10 +24,10 @@ export class MonumentService {
     )
   }
 
-  getMonumentById(monumentId: number): Observable<Monument|undefined> {
-    return this.http.get<Monument>(`api/monuments/${monumentId}`).pipe(
+  getMonumentById(monumentId: number): Observable<MonumentData|undefined> {
+    return this.http.get<MonumentData>(`api/monuments/${monumentId}`).pipe(
 
-      tap((response : Monument ) => console.log(response)),
+      tap((response : MonumentData ) => console.log(response)),
       
       catchError ( (error) => {
         console.log(error)
@@ -37,7 +37,7 @@ export class MonumentService {
     )
   }
 
-  editMonument(monument: Monument): Observable<null> {
+  editMonument(monument: MonumentData): Observable<null> {
 
     const httpOptions = {
       headers: new HttpHeaders({'Content-Type' : 'application/json'  })
@@ -53,9 +53,9 @@ export class MonumentService {
 
   }
 
-  searchMonumentList(term: string): Observable<Monument[]> {
-    return this.http.get<Monument[]>(`api/monuments?name=${term}`).pipe(
-      tap((response : Monument[] ) => console.log(response)),
+  searchMonumentList(term: string): Observable<MonumentData[]> {
+    return this.http.get<MonumentData[]>(`api/monuments?name=${term}`).pipe(
+      tap((response : MonumentData[] ) => console.log(response)),
       catchError ( (error) => {
         console.log(error)
         return of([])

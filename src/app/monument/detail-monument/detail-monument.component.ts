@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MONUMENTS } from '../mock-monument-list';
-import { Monument } from '../monument.model';
+import { Monument, MonumentData } from '../monument.model';
 import { MonumentService } from '../monument.service';
 
 @Component({
@@ -11,8 +11,8 @@ import { MonumentService } from '../monument.service';
   ]
 })
 export class DetailMonumentComponent implements OnInit {
-  monumentList: Monument[] = MONUMENTS
-  monument: Monument|undefined
+  monumentList: MonumentData[] = MONUMENTS
+  monument: MonumentData|undefined
 
   constructor(private route: ActivatedRoute, private router: Router,private monumentService: MonumentService) {}
 

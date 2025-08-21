@@ -1,6 +1,6 @@
-import { Monument } from './monument.model';
+import { Monument, MonumentData} from './monument.model';
 
-export const MONUMENTS: Monument[] = [
+export const MONUMENTS: MonumentData[] = [
   {
     id: 1,
     name: 'Tour Eiffel',

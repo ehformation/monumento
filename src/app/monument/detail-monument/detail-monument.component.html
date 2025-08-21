@@ -1,9 +1,9 @@
 <div *ngIf="monument" class="row">
     <div class="col s12 m8 offset-m2">
-    <h2 class="header center">{{ monument.data.name }}</h2>
+    <h2 class="header center">{{ monument.name }}</h2>
     <div class="card horizontal hoverable">
       <div class="card-image">
-        <img [src]="monument.data.picture">
+        <img [src]="monument.picture">
       </div>
       <div class="card-stacked">
         <div class="card-content">
@@ -11,29 +11,29 @@
             <tbody>
               <tr>
                 <td>Nom</td>
-                <td><strong>{{ monument.data.name }}</strong></td>
+                <td><strong>{{ monument.name }}</strong></td>
               </tr>
               <tr>
                 <td>Description </td>
-                <td><strong>{{ monument.data.description }}</strong></td>
+                <td><strong>{{ monument.description }}</strong></td>
               </tr>
               <tr>
                 <td>Pays</td>
                 <td>
-                  <span class="{{ monument.data.country | countryByColor }}">{{ monument.data.country }}</span>
+                  <span class="{{ monument.country | countryByColor }}">{{ monument.country }}</span>
                 </td>
               </tr>
               <tr>
                 <td>Ville</td>
-                <td><strong>{{ monument.data.city }}</strong></td>
+                <td><strong>{{ monument.city }}</strong></td>
               </tr>
               <tr>
                 <td>Date de construction</td>
-                <td><strong>{{ monument.data.buildYear }}</strong></td>
+                <td><strong>{{ monument.buildYear }}</strong></td>
               </tr>
               <tr>
                 <td>Date de création</td>
-                <td><em>{{ monument.data.created | date:"dd/MM/yyyy" }}</em></td>
+                <td><em>{{ monument.created | date:"dd/MM/yyyy" }}</em></td>
               </tr>
             </tbody>
           </table>
