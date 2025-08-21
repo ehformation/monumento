@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Monument, MonumentData } from './monument.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, Observable, of, tap, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,9 @@ export class MonumentService {
 
   getAllMonuments(): Observable<MonumentData[]> {
     
-    return this.http.get<MonumentData[]>('http://localhost:3000/api/monuments').pipe(
+    return this.http.get<Monument<MonumentData[]>>('http://localhost:3000/api/monuments').pipe(
 
+      map((response: Monument<any>) => response.data), 
       tap((response : MonumentData[] ) => console.log(response)),
 
       catchError ( (error) => {

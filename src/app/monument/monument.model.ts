@@ -1,8 +1,6 @@
-export interface Monument {
+export interface Monument<MonumentData> {
     message: string,
-    data: {
-        monuments: MonumentData[]
-    }
+    data: MonumentData
 }
 
 export interface MonumentData {
