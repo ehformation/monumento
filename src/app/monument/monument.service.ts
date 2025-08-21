@@ -12,7 +12,7 @@ export class MonumentService {
 
   getAllMonuments(): Observable<Monument[]> {
     
-    return this.http.get<Monument[]>('api/monuments').pipe(
+    return this.http.get<Monument[]>('http://localhost:3000/api/monuments').pipe(
 
       tap((response : Monument[] ) => console.log(response)),
 

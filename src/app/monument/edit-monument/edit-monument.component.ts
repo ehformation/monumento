@@ -8,7 +8,7 @@ import { MonumentService } from '../monument.service';
   template: `
     <h2>Editer {{ monument?.name }}</h2>
     <p *ngIf="monument" class="center">
-      <img [src]="monument.picture">
+      <img [src]="monument.data.picture">
     </p>
     <app-monument-form *ngIf="monument" [monument]="monument"></app-monument-form>
   `,

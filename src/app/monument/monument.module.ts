@@ -10,6 +10,10 @@ import { FormsModule } from '@angular/forms';
 import { EditMonumentComponent } from './edit-monument/edit-monument.component';
 import { SearchMonumentComponent } from './search-monument/search-monument.component';
 import { authGuard } from '../auth.guard';
+import { HttpClientModule } from '@angular/common/http';
+import { MonumentService } from './monument.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../auth/auth.intercepor';
 
 const monumentRoutes: Routes = [
   { path: 'edit/monument/:id', component: EditMonumentComponent, canActivate: [authGuard] },
@@ -31,8 +35,12 @@ const monumentRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(monumentRoutes)
-
-  ]
+  ],
+  providers: [
+    MonumentService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
 })
 export class MonumentModule { }

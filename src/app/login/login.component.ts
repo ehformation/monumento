@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   ]
 })
 export class LoginComponent implements OnInit{
-  message= 'Vous êtes deconnecté. (admin / 1234)'
+  message= 'Vous êtes deconnecté. (admin / admin)'
   identifiant = ''
   password = ''
 
@@ -25,16 +25,14 @@ export class LoginComponent implements OnInit{
   }
 
   login(): void {
-    this.message = 'En cours de connexion...';
-
-    this.auth.login(this.identifiant, this.password).subscribe((isLoggedIn:boolean) => {
-      this.setMessage()
-
-      if(isLoggedIn){
-        this.router.navigate(['/monuments'])
-      }else{
-        this.password = '';
-        this.router.navigate(['/login'])
+    this.auth.login(this.identifiant, this.password).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/monuments')
+        this.setMessage();
+      },
+      error: () => {
+        this.message = 'Identifiants invalides';
+        this.router.navigateByUrl('/login')
       }
     })
   }
